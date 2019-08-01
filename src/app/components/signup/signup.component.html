@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    
+   
+  <div class="col-md-4">
+
+      <div style="margin-bottom:20px;">
+     <h5> Signup</h5>
+     </div>
+
+      <form class="form" [formGroup]="custform" (submit)="register()">
+        <div class="form-group">
+          <label for="Phonenumber">Phonenumber</label>
+          <input type="number" maxlength="10" formControlName="Phonenumber" name="Phonenumber" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="Name"> Name</label>
+          <input type="text" formControlName="Name" name="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="email" formControlName="Email" name="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" formControlName="Password" name="Password" class="form-control" />
+        </div>
+        <div class="form-group">
+           <button class="btn" style="border:1px solid gray;color:yellowgreen;font-weight: 500;height: 36px;" type="submit" name="btnSubmit">Register</button>
+          </div>
+      </form>
+  </div>
+  
+</div>

@@ -1,0 +1,21 @@
+<div class="row justify-content-center">
+
+  <div class="col-md-6" style="margin-top: 20px">
+      <h5>Login</h5>
+      <p>new to the system. click here to <a class="" [routerLink]="['/signup']">Signup</a></p>
+      <form class="form" [formGroup]="form" (submit)="login()">
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="email" formControlName="Email" name="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" formControlName="Password" name="Password" class="form-control" />
+        </div>
+        <div class="form-group">
+           <button class="btn" style="border:1px solid gray;color:yellowgreen;font-weight: 500;height: 36px;" type="submit" name="btnSubmit">Login</button>
+          </div>
+      </form>
+  </div>
+  
+</div>

@@ -1,0 +1,63 @@
+<div class="row" *ngIf="resdetails" style="margin:20px 0px;">
+    <img src="assets/images/{{resdetails.id}}.jpeg" style="height:112px;width: 112px" alt="{{resdetails.name}}">
+
+    <div class="col-m" style="margin: 0 10px;">
+        <h5>{{resdetails.name}}</h5>
+        <div>{{resdetails.location}}</div>
+    </div>
+</div>
+
+<div class="row res-full-menu" *ngIf="mainMenu" >
+    <div class="col-m">
+        <ul class="nav flex-column nav-pills border-right menu">
+            <li class="nav-item" *ngFor="let m of mainMenu;" [ngClass]="{ active: selectedItem==m }"
+                (click)="menuitemclick(m)">
+                <a class="nav-link">{{m}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-m ">
+        <div class="item-container" *ngFor="let item of fullMenu;">
+            <div >
+                 <span style="font-weight:500">{{item.dish}}</span><br/>
+                 <span style="margin-top:3px;font-size:12px;">&#8377;{{item.price}}</span>
+            </div>
+            
+            <!-- <button class="btn btn-link" (click)="AddToCart(item)">Add to Cart</button> -->
+
+            <div class="controls">
+            
+                <button *ngIf="item.qty == 0" 
+                    (click)="AddToCart(item)" 
+                    class="btn add-button-lg button-lg"  style="border:1px solid gray;color:yellowgreen;font-weight: 500;height: 36px;">
+                    Add
+                    <i class="fa text-success fa-plus"></i>
+                </button>
+               
+                <button *ngIf="item.qty > 0" 
+                    (click)="incrementItemQuantity(item)" 
+                    class="btn add-button"><i class="material-icons">add</i>
+                </button>
+                <span  *ngIf="item.qty >= 1" style="color:yellowgreen;font-weight: 500;">{{item.qty}}</span>
+                <button *ngIf="item.qty >= 1" (click)="decrementItemFromCart(item)"
+                     class="btn reduce-button"><i class="material-icons">remove</i>
+                </button>
+                <button *ngIf="item.qty == 1" (click)="removeItemFromCart(item)"
+                    class="btn reduce-button"><i class="fa fa-times"></i>
+                </button>
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="col-m ">
+       <!-- <app-food-cart></app-food-cart> -->
+    </div>
+
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+ 
+</div>

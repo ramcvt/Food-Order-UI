@@ -1,0 +1,33 @@
+<div class="row justify-content-center" style="margin-bottom: 50px; margin-top: 20px;">
+  <div class="col-md-12 ">
+    <h5 style="text-align: center">Find Restaurant</h5>
+  </div>
+  <div class="input-group col-md-7">
+    <input type="text" value="" class="form-control" #search (keydown.enter)="searchresta(search.value)">
+    <div class="input-group-append">
+      <span class="input-group-text" style="cursor:pointer">
+        <i class="material-icons" (click)="searchresta(search.value)">search</i>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 rest-list" *ngFor="let p of restaurants | async">
+
+    <div class="card" (click)="gotoRestaurant(p.name)">
+      <img src="assets/images/{{p.id}}.jpeg" class="card-img-top" alt="{{p.name}}"/>
+      <div class="card-body">
+        <h6 class="card-title">{{p.name}}</h6>
+        <div style="display: flex ; justify-content: space-between;">
+          <p>{{p.location}}</p>
+          <div style="display: flex">
+            <div style="margin-top:0px;">{{p.rating}}</div>
+            <i class="material-icons" style="font-size: 18px;margin-top: 3px;color:yellowgreen">star</i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

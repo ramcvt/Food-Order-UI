@@ -1,0 +1,53 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Hungry? Order Food</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/']">
+        </a>
+      </li>
+      <!-- <li class="nav-item active" *ngIf="global.userName" style="display:flex;margin-right:10px;">
+        <i class="material-icons" style="font-size: 18px;margin-top:12px;color:yellowgreen">account_circle</i>
+        <a class="nav-link" [routerLink]="['/login']">{{global.userName}}
+        </a>
+      </li> -->
+      <li class="nav-item active dropdown" *ngIf="global.userName" style="display:flex;margin-right:10px;">
+        <i class="material-icons" style="font-size: 18px;margin-top:12px;color:yellowgreen">account_circle</i>
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" 
+        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{global.userName}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-item" role="button" (click)="moveOut()">Logout</div>
+          <a class="dropdown-item" [routerLink]="['/orders']">Orders</a>
+          <a class="dropdown-item">Profile</a>
+        </div>
+      </li>
+      <li class="nav-item active" *ngIf="!global.userName" style="display:flex;margin-right:10px;">
+        <i class="material-icons" style="font-size: 18px;margin-top:12px;color:yellowgreen">account_circle</i>
+        <a class="nav-link" [routerLink]="['/login']">Login
+        </a>
+      </li>
+
+      <li class="nav-item active" style="display:flex;">
+          <i class="material-icons" style="font-size: 18px;margin-top:12px;color:yellowgreen">add_shopping_cart</i>
+        <a class="nav-link" [routerLink]="['/cart']">Cart</a>
+      </li>
+
+
+      <!-- <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/signup']">Signup</a>
+      </li> -->
+
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

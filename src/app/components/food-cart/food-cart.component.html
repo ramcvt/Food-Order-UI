@@ -1,0 +1,83 @@
+<div class="item">
+    <div class="card" style="margin-top: 30px;">
+     
+
+      <div class="card-body">
+          <h5 class="card-title" style="text-align:center">Delivery Address</h5>
+    
+          <div class="form-group" style="border-top: 1px solid lightgray;">
+              <label for="cc_name">Address</label>
+              <input type="text" class="form-control" text="deliveryAddress" title="First and last name" required="required">
+          </div>
+    </div>
+  </div>
+
+     
+
+        <div class="card" style="margin-top: 30px;">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center">Cart Items</h5>
+          
+              <p class="card-title" style="font-weight: 500">{{cartItems.restaurantName}}</p>
+              <p class="card-text" style="border-bottom:1px solid lightgray; margin-top: -10px">{{cartItems.restlocation}}</p>
+              <div *ngFor="let item of cartItems.orderItems"  class="item-container">
+                <div>{{item.itemName}}</div>
+                <div>{{item.quantity}}</div>
+                <div>{{item.price}}</div>
+            </div>
+            <!-- <button (click)="pay()" class="btn" style="border:1px solid gray;color:yellowgreen;font-weight: 500;height: 36px; margin-top: 30px;">Proceed to Pay</button> -->
+            </div>
+          </div>
+
+          <div class="card" style="margin-top: 30px;">
+              <div class="card-body">
+                  <h5 class="card-title" style="text-align:center">Payment</h5>
+            
+                  <div>
+                      <label for="cc_name">Card Holder's Name</label>
+                      <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name" required="required">
+                  </div>
+                  <div>
+                      <label>Card Number</label>
+                      <input type="text" class="form-control" autocomplete="off" maxlength="20" pattern="\d{16}" title="Credit card number" required="">
+                  </div>
+                  <div class="form-group row">
+                      <label class="col-md-12">Card Exp. Date</label>
+                      <div class="col-md-4">
+                          <select class="form-control" name="cc_exp_mo" size="0">
+                              <option value="01">01</option>
+                              <option value="02">02</option>
+                              <option value="03">03</option>
+                              <option value="04">04</option>
+                              <option value="05">05</option>
+                              <option value="06">06</option>
+                              <option value="07">07</option>
+                              <option value="08">08</option>
+                              <option value="09">09</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
+                          </select>
+                      </div>
+                      <div class="col-md-4">
+                          <select class="form-control" name="cc_exp_yr" size="0">
+                              <option>2018</option>
+                              <option>2019</option>
+                              <option>2020</option>
+                              <option>2021</option>
+                              <option>2022</option>
+                          </select>
+                      </div>
+                      <div class="col-md-4">
+                          <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required="" placeholder="CVC">
+                      </div>
+                  </div>
+
+              <button (click)="pay()" class="btn" style="border:1px solid gray;color:yellowgreen;font-weight: 500;height: 36px; margin-top: 30px;">Proceed to Pay</button>
+              </div>
+          </div>
+
+          
+
+</div>
+ 
